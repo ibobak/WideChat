@@ -4,6 +4,7 @@
   "short_name": "WideChat",
   "version": "1.0.0",
   "description": "Full width chat layout for ChatGPT, Claude, Gemini, Grok, Qwen, DeepSeek, and Kimi. Expands the narrow conversation area to use your entire screen.",
+  "homepage_url": "https://github.com/ibobak/WideChat",
   "browser_specific_settings": {
     "gecko": {
       "id": "{6fca1434-3262-45a0-a250-5e8599088f3b}"
@@ -12,7 +13,11 @@
   "permissions": ["storage"],
   "action": {
     "default_title": "WideChat",
-    "default_popup": "settings.html"
+    "default_popup": "settings.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
   },
   "icons": {
     "16": "icons/icon16.png",
