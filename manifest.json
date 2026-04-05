@@ -36,7 +36,6 @@
       "*://*.deepseek.com/*",
       "*://*.kimi.com/*"
     ],
-    "js": ["widechat.js"],
-    "run_at": "document_idle"
+    "js": ["widechat.js"]
   }]
 }

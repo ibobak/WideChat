@@ -54,6 +54,11 @@ const getChatGPTCss = (aWidth) => `
         --thread-content-margin-lg: 16px !important;
     }
 
+    /* Cap user message bubble so it doesn't stretch across the full thread */
+    [class*="user-message-bubble"] {
+        --user-chat-width: 48rem !important;
+    }
+
     /* Widen table containers in conversation messages */
     div[class^='_tableContainer'] {
         --thread-gutter-size: unset !important;
