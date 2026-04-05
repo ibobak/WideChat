@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "WideChat",
+  "short_name": "WideChat",
+  "version": "1.0.0",
+  "description": "Full width chat layout for ChatGPT, Claude, Gemini, Grok, Qwen, DeepSeek, and Kimi. Expands the narrow conversation area to use your entire screen.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{6fca1434-3262-45a0-a250-5e8599088f3b}"
+    }
+  },
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "WideChat",
+    "default_popup": "settings.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "64": "icons/icon64.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [{
+    "matches": [
+      "*://*.chatgpt.com/*",
+      "*://*.claude.ai/*",
+      "*://*.gemini.google.com/*",
+      "*://*.grok.com/*",
+      "*://*.qwen.ai/*",
+      "*://*.deepseek.com/*",
+      "*://*.kimi.com/*"
+    ],
+    "js": ["widechat.js"],
+    "run_at": "document_idle"
+  }]
+}

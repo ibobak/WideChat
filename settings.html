@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>WideChat Settings</title>
+    <style>
+        body {
+            width: 350px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 8px;
+            margin: 0;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 10px 12px;
+            margin: 0 0 8px 0;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 13px;
+            padding: 0 4px;
+        }
+
+        .llm-links {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            padding: 4px 0;
+        }
+
+        .llm-links a {
+            display: flex;
+            padding: 0 4px;
+            transition: opacity 0.2s;
+        }
+
+        .llm-links a:hover {
+            opacity: 0.7;
+        }
+
+        .llm-links img {
+            width: 28px;
+            height: 28px;
+        }
+
+        .setting-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .setting-row input[type="number"] {
+            width: 50px;
+        }
+
+        button {
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        .donate-text {
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        img.boosty {
+            display: block;
+            margin: 6px auto;
+            max-width: 178px;
+        }
+
+        img.qr {
+            display: block;
+            margin: 0 auto;
+            max-width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Supported sites (click to open):</legend>
+        <nav class="llm-links">
+            <a href="https://claude.ai" target="_blank" title="Claude"><img src="icons/claude.png" alt="Claude"></a>
+            <a href="https://chatgpt.com" target="_blank" title="ChatGPT"><img src="icons/chatgpt.png" alt="ChatGPT"></a>
+            <a href="https://grok.com" target="_blank" title="Grok"><img src="icons/grok.png" alt="Grok"></a>
+            <a href="https://gemini.google.com" target="_blank" title="Gemini"><img src="icons/gemini.png" alt="Gemini"></a>
+            <a href="https://chat.qwen.ai" target="_blank" title="Qwen"><img src="icons/qwen.png" alt="Qwen"></a>
+            <a href="https://chat.deepseek.com" target="_blank" title="DeepSeek"><img src="icons/deepseek.png" alt="DeepSeek"></a>
+            <a href="https://kimi.ai" target="_blank" title="Kimi"><img src="icons/kimi.png" alt="Kimi"></a>
+        </nav>
+    </fieldset>
+
+    <fieldset>
+        <legend>Settings</legend>
+        <div class="setting-row">
+            <label for="inputWidth">Width in %:</label>
+            <input type="number" id="inputWidth" name="width" value="100" min="50" max="100">
+        </div>
+        <button id="apply-btn">Apply &amp; Close Settings</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>Support WideChat</legend>
+        <p class="donate-text">
+            A small tip helps keep things running — even $1!<br>
+            Adjust the amount on the pop-up screen:
+        </p>
+        <a href="https://boosty.to/ihor_bobak/donate" target="_blank">
+            <img src="images/boosty.png" alt="Donate on Boosty" class="boosty">
+        </a>
+        <a href="https://boosty.to/ihor_bobak/donate" target="_blank">
+            <img src="images/donate.png" alt="Donation QR code" class="qr">
+        </a>
+    </fieldset>
+
+    <script src="settings.js"></script>
+</body>
