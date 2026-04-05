@@ -129,28 +129,18 @@ const getGeminiCss = (aWidth) => `
     }
 `;
 
-// Grok: overrides --content-max-width CSS variable and container selectors.
+// Grok: widens the thread container and input bar without widening individual
+// message rows.  Message rows use max-w-[var(--content-max-width)] which keeps
+// them at the original 48rem so user/assistant alignment stays tight.
 const getGrokCss = (aWidth) => `
-    /* Override the CSS variable that controls thread width */
-    :root,
-    [class*="--content-max-width"] {
-        --content-max-width: ${aWidth}% !important;
-    }
-
-    /* Conversation thread containers */
-    .max-w-\\[--content-max-width\\],
-    .max-w-\\[var\\(--content-max-width\\)\\] {
+    /* Widen the conversation thread container */
+    .max-w-\\[--content-max-width\\] {
         max-width: ${aWidth}% !important;
     }
 
-    /* New chat page container and input bar */
+    /* Widen the input bar and new-chat landing page */
     .max-w-breakout,
     .query-bar {
-        max-width: ${aWidth}% !important;
-    }
-
-    /* User message bubble */
-    .\\@sm\\/mainview\\:max-w-\\[90\\%\\] {
         max-width: ${aWidth}% !important;
     }
 `;
