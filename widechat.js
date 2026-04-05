@@ -40,14 +40,29 @@ const isKimi = window.location.hostname.endsWith("kimi.com");
 // ChatGPT: overrides the --thread-content-max-width CSS variable that controls
 // both the conversation thread and composer width, and reduces side margins.
 const getChatGPTCss = (aWidth) => `
-    /* Override thread width variable at every breakpoint */
+    /* Override thread width variable and max-width at every breakpoint */
     div[class*="--thread-content-max-width"] {
         --thread-content-max-width: ${aWidth}% !important;
+        max-width: ${aWidth}% !important;
     }
 
-    /* Reduce side margins so the wider thread can use the space */
+    /* Reduce side margins (including responsive sub-variables) */
     div[class*="--thread-content-margin"] {
         --thread-content-margin: 16px !important;
+        --thread-content-margin-xs: 16px !important;
+        --thread-content-margin-sm: 16px !important;
+        --thread-content-margin-lg: 16px !important;
+    }
+
+    /* Widen table containers in conversation messages */
+    div[class^='_tableContainer'] {
+        --thread-gutter-size: unset !important;
+        width: unset !important;
+    }
+
+    div[class^='_tableWrapper'] {
+        min-width: fit-content !important;
+        max-width: ${aWidth}% !important;
     }
 `;
 
