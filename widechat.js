@@ -79,9 +79,14 @@ const getChatGPTCss = (aWidth) => `
 
 // Claude.ai: widens conversation thread, new-chat page, composer, and message bubbles.
 const getClaudeCss = (aWidth) => `
-    /* Conversation thread area */
+    /* Outer container that holds both thread and composer */
     .max-w-3xl {
         max-width: ${aWidth}% !important;
+    }
+
+    /* Nested max-w-3xl inside the outer one must not double-squeeze */
+    .max-w-3xl .max-w-3xl {
+        max-width: 100% !important;
     }
 
     /* New chat page content and composer */
@@ -140,19 +145,29 @@ const getGeminiCss = (aWidth) => `
     }
 `;
 
-// Grok: widens the thread container and input bar without widening individual
-// message rows.  Message rows use max-w-[var(--content-max-width)] which keeps
-// them at the original 48rem so user/assistant alignment stays tight.
+// Grok: overrides the --content-max-width CSS variable that controls message
+// row width, and widens the input bar and landing page.
 const getGrokCss = (aWidth) => `
-    /* Widen the conversation thread container */
-    .max-w-\\[--content-max-width\\] {
-        max-width: ${aWidth}% !important;
+    /* Widen message rows and the input bar to the chosen width */
+    [class*="--content-max-width"] {
+        --content-max-width: ${aWidth}% !important;
+    }
+
+    /* The intermediate wrapper also uses --content-max-width as its max-width;
+       reset it so it doesn't double-constrain the message rows inside it. */
+    [class*="--content-max-width"] [class*="max-w-[--content-max-width"] {
+        max-width: 100% !important;
     }
 
     /* Widen the input bar and new-chat landing page */
-    .max-w-breakout,
-    .query-bar {
+    .max-w-breakout {
         max-width: ${aWidth}% !important;
+    }
+
+    /* Prevent double-squeeze on nested breakout (e.g. query-bar inside breakout) */
+    .max-w-breakout .max-w-breakout,
+    .max-w-breakout .query-bar {
+        max-width: 100% !important;
     }
 `;
 
