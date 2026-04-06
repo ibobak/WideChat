@@ -7,7 +7,11 @@
   "homepage_url": "https://github.com/ibobak/WideChat",
   "browser_specific_settings": {
     "gecko": {
-      "id": "{6fca1434-3262-45a0-a250-5e8599088f3b}"
+      "id": "{6fca1434-3262-45a0-a250-5e8599088f3b}",
+      "data_collection_permissions": {
+        "required": ["none"],
+        "optional": []
+      }
     }
   },
   "permissions": ["storage"],
