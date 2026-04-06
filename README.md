@@ -45,14 +45,14 @@ Next, depending on your browser:
 
 ## For Chrome
     
-1. Open [chrome://extensions/](chrome://extensions/)
-2. Press on "Load Unpacked", select the folder which you've just cloned / unzipped
+1. In your URL bar type: chrome://extensions/
+2. Press "Load Unpacked", select the folder which you've just cloned or unzipped.
 
 ## For Firefox
 
-1. Open [about:debugging](about:debugging)
-2. Press on "This Firefox"
-3. Use the button "Load Temporary Add-on" and point to the manifest.json from the extracted folder.
+1. In your URL bar type: about:debugging
+2. Press "This Firefox"
+3. Press "Load Temporary Add-on" and point to the manifest.json from the extracted folder.
 
 
 # 📋 License
