@@ -30,13 +30,34 @@ chatgpt full width, wider conversation, AI chat wide mode, chat widener, remove 
 If you enjoy this extension, consider supporting its development by making 
 a [small donation](https://boosty.to/ihor_bobak/donate):
 
-[![Donate on Boosty](boosty.png)](https://boosty.to/ihor_bobak/donate)
+[![Donate on Boosty](images/boosty.png)](https://boosty.to/ihor_bobak/donate)
+
+
+# Manual Installation
+
+To install the extension manually for review/experimentation purposes, first clone this repo to some folder with a command 
+```bash
+git clone https://github.com/ibobak/WideChat.git
+```
+Alternatively, you may [download Zip archive](https://github.com/ibobak/WideChat/archive/refs/heads/main.zip) and extract it on disk.
+
+Next, depending on your browser:
+
+## For Chrome
+    
+1. Open [chrome://extensions/](chrome://extensions/)
+2. Press on "Load Unpacked", select the folder which you've just cloned / unzipped
+
+## For Firefox
+
+1. Open [about:debugging](about:debugging)
+2. Press on "This Firefox"
+3. Use the button "Load Temporary Add-on" and point to the manifest.json from the extracted folder.
 
 
 # 📋 License
 
-This project is **source-available**: the code is public for transparency and review, 
-but it is not licensed for redistribution or modification.
+This project is free to use and **source-available**: the code is public for transparency and review, but it is not licensed for redistribution or modification.
 
 You may:
 - Freely use the browser extension on as many computers as you wish
