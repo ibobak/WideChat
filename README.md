@@ -21,8 +21,8 @@ Features:
 
 Perfect for ultrawide monitors and large displays where the default narrow layout wastes screen space. 
 
-Keywords: wide chat, wider chatgpt, full width claude, expand chat area, claude wide layout, 
-chatgpt full width, wider conversation, AI chat wide mode, chat widener, remove sidebar, bigger chat area
+This is how it looks:
+![Screenshot](images/screenshot.png "Screenshot")
 
 
 # Donations
@@ -72,3 +72,8 @@ You may **not**:
 If you find a bug or want to suggest a feature, feel free to open an issue.
 
 For permission requests, contact: [ibobak@gmail.com](ibobak@gmail.com)
+
+# Keywords
+
+wide chat, wider chatgpt, full width claude, expand chat area, claude wide layout, 
+chatgpt full width, wider conversation, AI chat wide mode, chat widener, remove sidebar, bigger chat area
