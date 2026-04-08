@@ -30,6 +30,7 @@ const isGrok = window.location.hostname.endsWith("grok.com");
 const isQwen = window.location.hostname.endsWith("qwen.ai");
 const isDeepSeek = window.location.hostname.endsWith("deepseek.com");
 const isKimi = window.location.hostname.endsWith("kimi.com");
+const isCopilot = window.location.hostname.endsWith("copilot.microsoft.com");
 
 // --- Per-site CSS generators ---
 // Each function returns CSS that overrides the site's max-width constraints
@@ -264,6 +265,34 @@ const getKimiCss = (aWidth) => `
     }
 `;
 
+// Copilot: overrides the max-w-chat Tailwind class that controls the thread,
+// composer, and landing page width, and widens user message bubbles.
+const getCopilotCss = (aWidth) => `
+    /* Thread container and composer — override both max-width and
+       align-self because .max-w-chat sits in a flex-col items-center */
+    .max-w-chat {
+        max-width: ${aWidth}% !important;
+        width: ${aWidth}% !important;
+        align-self: stretch !important;
+    }
+
+    /* Nested .max-w-chat must not double-squeeze */
+    .max-w-chat .max-w-chat {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    /* User message bubble */
+    .max-w-user-text-message {
+        max-width: ${aWidth}% !important;
+    }
+
+    /* Composer input wrapper — fill the parent */
+    .w-expanded-composer {
+        width: 100% !important;
+    }
+`;
+
 // Pick the right CSS generator for the current site and inject the styles.
 // Called on page load and whenever the user adjusts the width slider.
 const setMaxWidth = (aWidth) => {
@@ -283,6 +312,8 @@ const setMaxWidth = (aWidth) => {
     widenDeepSeekLanding(aWidth);
   } else if (isKimi) {
     css = getKimiCss(aWidth);
+  } else if (isCopilot) {
+    css = getCopilotCss(aWidth);
   }
 
   attachStyle(css);

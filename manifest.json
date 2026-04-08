@@ -1,20 +1,24 @@
 {
   "manifest_version": 3,
-  "name": "WideChat",
+  "name": "WideChat - Full Width AI Chat for ChatGPT, Claude, Gemini & others",
   "short_name": "WideChat",
-  "version": "1.0.0",
-  "description": "Full width chat layout for ChatGPT, Claude, Gemini, and many others. Expands the narrow conversation area to use your entire screen.",
+  "version": "1.1.0",
+  "description": "Make ChatGPT, Claude, Gemini and other AI chats full width. Expand the narrow chat area to use your entire wide screen.",
   "homepage_url": "https://github.com/ibobak/WideChat",
   "browser_specific_settings": {
     "gecko": {
       "id": "{6fca1434-3262-45a0-a250-5e8599088f3b}",
       "data_collection_permissions": {
-        "required": ["none"],
+        "required": [
+          "none"
+        ],
         "optional": []
       }
     }
   },
-  "permissions": ["storage"],
+  "permissions": [
+    "storage"
+  ],
   "action": {
     "default_title": "WideChat",
     "default_popup": "settings.html",
@@ -30,16 +34,21 @@
     "64": "icons/icon64.png",
     "128": "icons/icon128.png"
   },
-  "content_scripts": [{
-    "matches": [
-      "*://*.chatgpt.com/*",
-      "*://*.claude.ai/*",
-      "*://*.gemini.google.com/*",
-      "*://*.grok.com/*",
-      "*://*.qwen.ai/*",
-      "*://*.deepseek.com/*",
-      "*://*.kimi.com/*"
-    ],
-    "js": ["widechat.js"]
-  }]
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.chatgpt.com/*",
+        "*://*.claude.ai/*",
+        "*://*.gemini.google.com/*",
+        "*://*.grok.com/*",
+        "*://*.qwen.ai/*",
+        "*://*.deepseek.com/*",
+        "*://*.kimi.com/*",
+        "*://*.copilot.microsoft.com/*"
+      ],
+      "js": [
+        "widechat.js"
+      ]
+    }
+  ]
 }

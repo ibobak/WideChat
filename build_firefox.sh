@@ -8,7 +8,7 @@ VERSION=$(grep '"version"' manifest.json | head -1 | sed 's/.*: *"\(.*\)".*/\1/'
 ZIP_NAME="WideChat-firefox-v${VERSION}.zip"
 TEMP_DIR=$(mktemp -d ./tmp_firefox_build_XXXXXX)
 
-cp manifest.json settings.html settings.js widechat.js README.md "$TEMP_DIR/"
+cp manifest.json settings.html settings.js widechat.js "$TEMP_DIR/"
 cp -r icons images "$TEMP_DIR/"
 
 # Remove homepage_url (not supported in Firefox manifest) and default_icon (Firefox uses top-level icons)

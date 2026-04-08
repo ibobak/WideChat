@@ -1,10 +1,10 @@
-# WideChat - Full Width AI Chat
+# WideChat - Full Width AI Chat for ChatGPT, Claude, Gemini & Other
 
-If you use AI chat on a wide monitor, you know the problem: the chat area is narrow,
-wasting most of your screen. This Firefox and Chrome extension removes the max-width 
-limit and makes the chat area wider.
+Tired of the narrow chat window wasting your wide screen?
 
-Works for these AI chats:
+WideChat expands the conversation area in your favorite AI chats to use the full width of your monitor. No more squinting at a narrow column in the middle of the screen while the rest sits empty.
+
+Works with:
 - [ChatGPT](https://chatgpt.com)
 - [Claude](https://claude.ai)
 - [Gemini](https://gemini.google.com)
@@ -12,14 +12,17 @@ Works for these AI chats:
 - [Qwen](https://chat.qwen.ai)
 - [DeepSeek](https://chat.deepseek.com)
 - [Kimi](https://kimi.ai)
+- [Copilot] (https://copilot.microsoft.com)
 
+Why WideChat?
+- Configurable width: choose anywhere from default to 100% full screen
+- Works instantly: the chat expands automatically when you open the site
+- Lightweight: WideChat only adjusts CSS, zero performance impact 
+- Free and open source
 
-Features:
-- Configurable width for chat layout: expand the conversation area up to 100%
-- Chat is resized automatically as soon as you open the site
-- Lightweight: it just changes CSS correctly, no performance impact.
+Whether you're reading long AI responses, reviewing code, or having a deep conversation, WideChat gives you the screen space you paid for.
 
-Perfect for ultrawide monitors and large displays where the default narrow layout wastes screen space. 
+WideChat is the simple, free widescreen extension for AI chat. Install it once, and every AI chat you use gets wider immediately.
 
 This is how it looks:
 ![Screenshot](images/screenshot.png "Screenshot")
@@ -27,8 +30,7 @@ This is how it looks:
 
 # Donations
 
-If you enjoy this extension, consider supporting its development by making 
-a [small donation](https://boosty.to/ihor_bobak/donate):
+Enjoying WideChat? If it makes your screen happier, consider [buying me a coffee ☕](https://boosty.to/ihor_bobak/donate):
 
 [![Donate on Boosty](images/boosty.png)](https://boosty.to/ihor_bobak/donate)
 
@@ -77,3 +79,16 @@ For permission requests, contact: [ibobak@gmail.com](ibobak@gmail.com)
 
 wide chat, wider chatgpt, full width claude, expand chat area, claude wide layout, 
 chatgpt full width, wider conversation, AI chat wide mode, chat widener, remove sidebar, bigger chat area
+
+
+# Release Log
+
+Release log:
+
+- **1.1.0** 
+
+    added support for Copilot. 
+
+- **1.0.0**
+
+    Initial version: supports seven AI chats.

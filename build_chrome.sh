@@ -8,7 +8,7 @@ VERSION=$(grep '"version"' manifest.json | head -1 | sed 's/.*: *"\(.*\)".*/\1/'
 ZIP_NAME="WideChat-chrome-v${VERSION}.zip"
 TEMP_DIR=$(mktemp -d ./tmp_chrome_build_XXXXXX)
 
-cp manifest.json settings.html settings.js widechat.js README.md "$TEMP_DIR/"
+cp manifest.json settings.html settings.js widechat.js "$TEMP_DIR/"
 cp -r icons images "$TEMP_DIR/"
 
 # Remove browser_specific_settings block from manifest.json
