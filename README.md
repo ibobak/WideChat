@@ -1,4 +1,4 @@
-# WideChat - Full Width AI Chat for ChatGPT, Claude, Gemini & Other
+# WideChat - Full Width AI Chat for ChatGPT, Claude, Gemini & others
 
 Tired of the narrow chat window wasting your wide screen?
 
