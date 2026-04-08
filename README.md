@@ -12,7 +12,7 @@ Works with:
 - [Qwen](https://chat.qwen.ai)
 - [DeepSeek](https://chat.deepseek.com)
 - [Kimi](https://kimi.ai)
-- [Copilot] (https://copilot.microsoft.com)
+- [Copilot](https://copilot.microsoft.com)
 
 Why WideChat?
 - Configurable width: choose anywhere from default to 100% full screen
