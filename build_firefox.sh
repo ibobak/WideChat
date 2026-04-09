@@ -18,6 +18,7 @@ with open('$TEMP_DIR/manifest.json', 'r') as f:
     m = json.load(f)
 m.pop('homepage_url', None)
 m['action'].pop('default_icon', None)
+m['name'] = 'WideChat - Full Width AI Chat'
 with open('$TEMP_DIR/manifest.json', 'w') as f:
     json.dump(m, f, indent=2)
     f.write('\n')
