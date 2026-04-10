@@ -1,3 +1,8 @@
+# Chrome & Firefox Plugins
+
+You can get this extension at [Chrome Web Store](https://chromewebstore.google.com/detail/widechat-full-width-ai-ch/nblbllelpafbjfjdhidfneoajhoemgnh) or at [Firefox Browser Extensions](https://addons.mozilla.org/en-US/firefox/addon/widechat/) website.
+
+
 # WideChat - Full Width AI Chat for ChatGPT, Claude, Gemini & others
 
 Tired of the narrow chat window wasting your wide screen?
