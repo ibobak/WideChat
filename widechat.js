@@ -29,7 +29,7 @@ const isGemini = window.location.hostname.endsWith("gemini.google.com");
 const isGrok = window.location.hostname.endsWith("grok.com");
 const isQwen = window.location.hostname.endsWith("qwen.ai");
 const isDeepSeek = window.location.hostname.endsWith("deepseek.com");
-const isKimi = window.location.hostname.endsWith("kimi.com");
+const isKimi = window.location.hostname.endsWith("kimi.com") || window.location.hostname.endsWith("kimi.ai");
 const isCopilot = window.location.hostname.endsWith("copilot.microsoft.com");
 
 // --- Per-site CSS generators ---
@@ -95,9 +95,26 @@ const getClaudeCss = (aWidth) => `
         max-width: ${aWidth}% !important;
     }
 
-    /* Outer main container on new chat page */
-    main.max-w-7xl {
+    /* Outer container on new chat page (was <main>, now a <div>) */
+    .max-w-7xl {
         max-width: ${aWidth}% !important;
+    }
+
+    /* Nested max-w-2xl inside the new-chat container must not double-squeeze */
+    .max-w-7xl .max-w-2xl {
+        max-width: 100% !important;
+    }
+
+    /* Chat column wrapper (holds both thread and composer) introduced in 2026;
+       it caps the whole chat at 50.5rem regardless of the inner max-w-3xl */
+    .max-w-\\[50\\.5rem\\] {
+        max-width: ${aWidth}% !important;
+    }
+
+    /* Thread list inside the chat column must not double-squeeze */
+    .max-w-\\[50\\.5rem\\] .max-w-3xl,
+    .max-w-\\[50\\.5rem\\] .max-w-2xl {
+        max-width: 100% !important;
     }
 
     /* User message bubbles */
@@ -244,6 +261,18 @@ const getKimiCss = (aWidth) => `
     /* Input area */
     .chat-editor {
         max-width: ${aWidth}% !important;
+    }
+
+    /* Input area outer wrapper on kimi.ai (caps the editor at 768px) */
+    .chat-editor-wrap,
+    .publisher-shortcut,
+    .chat-status-row {
+        max-width: ${aWidth}% !important;
+    }
+
+    /* Editor inside the wrapper must not double-squeeze */
+    .chat-editor-wrap .chat-editor {
+        max-width: 100% !important;
     }
 
     /* Notifications */

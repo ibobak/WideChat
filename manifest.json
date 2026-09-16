@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "WideChat - Full Width AI Chat for ChatGPT, Claude, Gemini & others",
   "short_name": "WideChat",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Make ChatGPT, Claude, Gemini and other AI chats full width. Expand the narrow chat area to use your entire wide screen.",
   "homepage_url": "https://github.com/ibobak/WideChat",
   "browser_specific_settings": {
@@ -44,6 +44,7 @@
         "*://*.qwen.ai/*",
         "*://*.deepseek.com/*",
         "*://*.kimi.com/*",
+        "*://*.kimi.ai/*",
         "*://*.copilot.microsoft.com/*"
       ],
       "js": [

@@ -90,6 +90,10 @@ chatgpt full width, wider conversation, AI chat wide mode, chat widener, remove 
 
 Release log:
 
+- **1.2.0** 
+
+    fixed problems with Claude (they changed the css), fixed problem with Kimi (it added a new domain).
+
 - **1.1.0** 
 
     added support for Copilot. 
