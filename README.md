@@ -90,6 +90,10 @@ chatgpt full width, wider conversation, AI chat wide mode, chat widener, remove 
 
 Release log:
 
+- **1.4.0** 
+
+    2026-09-30: fixed table layout for one of AI chats. 
+
 - **1.3.0** 
 
     2026-09-30: again Claude is changing CSS.

@@ -177,6 +177,42 @@ const getGeminiCss = (aWidth) => `
     hallucination-disclaimer {
         max-width: ${aWidth}% !important;
     }
+
+    /* Extended/XL grid layout (Sep 2026): every markdown block and the response
+       chrome are capped at a hardcoded 708px and centered with auto margins
+       inside the already-widened conversation container */
+    .enable-extended-and-xl-grid .conversation-container {
+        box-sizing: border-box !important;
+        padding-inline: var(--gem-sys-spacing--xxl, 24px) !important;
+    }
+
+    .enable-extended-and-xl-grid .markdown > *,
+    .enable-extended-and-xl-grid .response-container-header,
+    .enable-extended-and-xl-grid .response-container-footer,
+    .enable-extended-and-xl-grid .response-footer,
+    .enable-extended-and-xl-grid .bot-name,
+    .enable-extended-and-xl-grid .imported-chat-label,
+    .enable-extended-and-xl-grid model-response-disclaimers {
+        max-width: 100% !important;
+        margin-inline: 0 !important;
+    }
+
+    /* Message actions row is offset by the same centering math */
+    .enable-extended-and-xl-grid message-actions {
+        max-width: 100% !important;
+        margin-inline: -6px 0 !important;
+    }
+
+    /* Tables break out to the full width but are padded by (50% - 354px)
+       to line up with the centered 708px text column; drop that padding */
+    .enable-extended-and-xl-grid .table-block.new-table-style .table-content,
+    .enable-extended-and-xl-grid .table-block.new-table-style .table-footer {
+        padding-inline: 0 !important;
+    }
+
+    .enable-extended-and-xl-grid .table-block.new-table-style .table-content::-webkit-scrollbar-track {
+        margin-inline: 0 !important;
+    }
 `;
 
 // Grok: overrides the --content-max-width CSS variable that controls message
