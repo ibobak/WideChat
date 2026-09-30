@@ -117,6 +117,22 @@ const getClaudeCss = (aWidth) => `
         max-width: 100% !important;
     }
 
+    /* Chat view redesign (Sep 2026): thread and composer columns are capped
+       through the --transcript-width variable (default 48rem) */
+    :root {
+        --transcript-width: ${aWidth}% !important;
+    }
+
+    /* Inner transcript column sits inside the outer one and must not double-squeeze */
+    [class*="max-w-[calc(var(--transcript-width"] * {
+        --transcript-width: 100% !important;
+    }
+
+    /* User message bubbles in the redesigned chat view (default 85%) */
+    [class*="max-w-[var(--cds-message-bubble-measure)]"] {
+        max-width: ${aWidth}% !important;
+    }
+
     /* User message bubbles */
     .max-w-\\[75ch\\] {
         max-width: ${aWidth}% !important;
