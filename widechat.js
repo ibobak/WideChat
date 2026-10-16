@@ -116,6 +116,12 @@ const getClaudeCss = (aWidth) => `
         max-width: 100% !important;
     }
 
+    /* New chat page composer wrapper (claude.ai/new) is capped at 40rem
+       until the first character is typed */
+    .max-w-\\[40rem\\] {
+        max-width: ${aWidth}% !important;
+    }
+
     /* Chat column wrapper (holds both thread and composer) introduced in 2026;
        it caps the whole chat at 50.5rem regardless of the inner max-w-3xl */
     .max-w-\\[50\\.5rem\\] {
