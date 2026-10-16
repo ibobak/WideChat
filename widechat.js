@@ -13,14 +13,25 @@ const loadSettings = () => {
 
 // Inject or update a <style> element in the page's <head>.
 // Reuses an existing element with the same `id` to avoid duplicates.
-const attachStyle = (aCss) => {
-  const id = "widechat-style";
-  let style = document.getElementById(id);
-  if (!style) {
-    style = document.head.appendChild(Object.assign(document.createElement("style"), { id }));
+const STYLE_ID = "widechat-style";
+let styleEl = null;
+
+const mountStyle = () => {
+  if (styleEl && styleEl.isConnected) return;
+  if (!styleEl) {
+    styleEl = Object.assign(document.createElement("style"), { id: STYLE_ID });
   }
-  style.textContent = aCss;
+  (document.head || document.documentElement).appendChild(styleEl);
 };
+
+const attachStyle = (aCss) => {
+  mountStyle();
+  styleEl.textContent = aCss;
+};
+
+// SPA frameworks (e.g. ChatGPT's React app) can drop unknown <head> children
+// during hydration/navigation, which silently removes our CSS. Re-mount it.
+new MutationObserver(mountStyle).observe(document.documentElement, { childList: true, subtree: true });
 
 // Detect which LLM chat site the content script is running on
 const isChatGPT = window.location.hostname.endsWith("chatgpt.com");

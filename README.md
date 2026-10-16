@@ -90,22 +90,20 @@ chatgpt full width, wider conversation, AI chat wide mode, chat widener, remove 
 
 Release log:
 
-- **1.4.0** 
+- **1.4.1** 
+    2026-10-16: fixed the width not being applied on load in Firefox (ChatGPT removed the injected style after page load; it is now re-attached automatically).
 
+- **1.4.0** 
     2026-09-30: fixed table layout for one of AI chats. 
 
 - **1.3.0** 
-
     2026-09-30: again Claude is changing CSS.
 
 - **1.2.0** 
-
     2026-09-16: fixed problems with Claude (they changed the css), fixed problem with Kimi (it added a new domain).
 
 - **1.1.0** 
-
     2026-04-10: added support for Copilot. 
 
 - **1.0.0**
-
     2026-04-06: Initial version: supports seven AI chats.
